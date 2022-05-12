@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings version="3.0" xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.1 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2021.12.11 a las 04:33:31 PM CET 
+
+  -->
+  <jaxb:bindings scd="x-schema::tns" xmlns:tns="http://ws.udc.es/phonecalls/xml">
+    <jaxb:schemaBindings map="false">
+      <jaxb:package name="es.udc.rs.telco.client.service.rest.dto"/>
+    </jaxb:schemaBindings>
+    <jaxb:bindings scd="~tns:CustomerWithPhoneCallsExceptionType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientCustomerWithPhoneCallsExceptionDtoJaxb"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~tns:DNIAlreadyRegisteredExceptionType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientDNIAlreadyRegisteredExceptionDtoJaxb"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~tns:InvalidStatusExceptionType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientInvalidStatusExceptionDtoJaxb"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~tns:MonthNotExpiredExceptionType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientMonthNotExpiredExceptionDtoJaxb"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~tns:NotAddedCustomerExceptionType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientNotAddedCustomerExceptionDtoJaxb"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~tns:WrongPhoneCallStatusExceptionType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientWrongPhoneCallStatusExceptionDtoJaxb"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~tns:customerType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientCustomerDtoJaxb"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~tns:inputValidationExceptionType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientInputValidationExceptionDtoJaxb"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~tns:instanceNotFoundExceptionType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientInstanceNotFoundExceptionDtoJaxb"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~tns:callType">
+      <jaxb:class ref="es.udc.rs.telco.client.service.rest.dto.ClientPhoneCallDtoJaxb"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+  <jaxb:bindings scd="x-schema::">
+    <jaxb:schemaBindings map="false">
+      <jaxb:package name="es.udc.rs.telco.client.service.rest.dto"/>
+    </jaxb:schemaBindings>
+    <jaxb:bindings scd="~phoneCallType">
+      <jaxb:typesafeEnumClass ref="es.udc.rs.telco.client.service.rest.dto.PhoneCallType"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~phoneCallStatus">
+      <jaxb:typesafeEnumClass ref="es.udc.rs.telco.client.service.rest.dto.PhoneCallStatus"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+</jaxb:bindings>
+

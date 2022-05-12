@@ -1,0 +1,86 @@
+<jxb:bindings version="3.0"
+    xmlns:jxb="https://jakarta.ee/xml/ns/jaxb"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+    xmlns:ns1="http://www.w3.org/2005/Atom">
+
+    <jxb:bindings schemaLocation="../../../../rs-telco-service/target/generated-resources/schemagen/schema2.xsd">
+        <jxb:bindings node="//xs:complexType[@name='customerType']">
+            <jxb:class name="ClientCustomerDtoJaxb"/>
+            <jxb:bindings node=".//xs:attribute[@name='customerId']">
+               <jxb:property name="customerId"/>
+            </jxb:bindings>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='customerListType']">
+            <jxb:class name="CustomerDtoJaxbList"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='customerListType']">
+            <jxb:bindings node=".//xs:element[@ref='tns:customerDetails']">
+                <jxb:property name="customers"/>
+            </jxb:bindings>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='customerDetailsType']">
+            <jxb:class name="CustomerDetailsDtoJaxb"/>
+            <jxb:bindings node=".//xs:element[@ref='ns1:self']">
+                <jxb:property name="self"/>
+            </jxb:bindings>
+            <jxb:bindings node=".//xs:element[@ref='ns1:link']">
+                <jxb:property name="links"/>
+            </jxb:bindings>
+            <jxb:bindings node=".//xs:attribute[@name='customerId']">
+                <jxb:property name="customerId"/>
+            </jxb:bindings>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='phoneCallListType']">
+            <jxb:class name="PhoneCallDtoJaxbList"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='phoneCallListType']">
+            <jxb:bindings node=".//xs:element[@ref='tns:phoneCallDetails']">
+        <jxb:property name="phonecalls"/>
+        </jxb:bindings>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='phoneCallDetailsType']">
+            <jxb:class name="PhoneCallDetailsDtoJaxb"/>
+            <jxb:bindings node=".//xs:element[@ref='ns1:self']">
+                <jxb:property name="self"/>
+            </jxb:bindings>
+            <jxb:bindings node=".//xs:element[@ref='ns1:link']">
+                <jxb:property name="links"/>
+            </jxb:bindings>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:complexType[@name='CustomerWithPhoneCallsExceptionType']">
+            <jxb:class name="ClientCustomerWithPhoneCallsExceptionDtoJaxb"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='inputValidationExceptionType']">
+            <jxb:class name="ClientInputValidationExceptionDtoJaxb"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='instanceNotFoundExceptionType']">
+            <jxb:class name="ClientInstanceNotFoundExceptionDtoJaxb"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='DNIAlreadyRegisteredExceptionType']">
+            <jxb:class name="ClientDNIAlreadyRegisteredExceptionDtoJaxb"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='InvalidStatusExceptionType']">
+            <jxb:class name="ClientInvalidStatusExceptionDtoJaxb"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='MonthNotExpiredExceptionType']">
+            <jxb:class name="ClientMonthNotExpiredExceptionDtoJaxb"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='NotAddedCustomerExceptionType']">
+            <jxb:class name="ClientNotAddedCustomerExceptionDtoJaxb"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='WrongPhoneCallStatusExceptionType']">
+            <jxb:class name="ClientWrongPhoneCallStatusExceptionDtoJaxb"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:simpleType[@name='PhonecallStatusType']">
+            <jxb:typesafeEnumClass name="PhonecallStatusDtoJaxb"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='phoneCallType']">
+            <jxb:class name="ClientPhoneCallDtoJaxb"/>
+            <jxb:bindings node=".//xs:attribute[@name='phoneCallId']">
+               <jxb:property name="phoneCallId"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+</jxb:bindings>

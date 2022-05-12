@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="PruebaCA" xmlns:ns2="http://rs.udc.es/telco" xmlns:ns3="http://rs.udc.es/rating" xmlns:ns4="http://rs.udc.es/billing" xmlns:ns5="http://rs.udc.es/reward" xmlns:ns6="http://j2ee.netbeans.org/wsdl/FlujoBPEL/src/CallsSearch" xmlns:ns7="http://enterprise.netbeans.org/bpel/FlujoBPEL/flujoBPEL" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="TelcoProvider" interface-name="ns2:TelcoProvider" name="endpoint1" service-name="ns1:PruebaCAService2"/>
+        <endpoint endpoint-name="RatingProvider" interface-name="ns3:RatingProvider" name="endpoint2" service-name="ns1:PruebaCAService3"/>
+        <endpoint endpoint-name="BillingProvider" interface-name="ns4:BillingProvider" name="endpoint3" service-name="ns1:PruebaCAService4"/>
+        <endpoint endpoint-name="RewardProvider" interface-name="ns5:RewardProvider" name="endpoint4" service-name="ns1:PruebaCAService5"/>
+        <endpoint endpoint-name="CallsSearch" interface-name="ns6:CallsSearchPortType" name="endpoint5" service-name="ns1:PruebaCAService1"/>
+        <endpoint display-name="PartnerLinkCallsSearch" endpoint-name="CallsSearchPortTypeRole_myRole" file-path="flujoBPEL.bpel" interface-name="ns6:CallsSearchPortType" name="endpoint6" process-name="flujoBPEL" service-name="ns7:PartnerLinkCallsSearch"/>
+        <endpoint display-name="PartnerBillingProvider" endpoint-name="BillingProviderRole_partnerRole" file-path="flujoBPEL.bpel" interface-name="ns4:BillingProvider" name="endpoint7" process-name="flujoBPEL" service-name="ns7:PartnerBillingProvider"/>
+        <endpoint display-name="PartnerRatingProvider" endpoint-name="RatingProviderRole_partnerRole" file-path="flujoBPEL.bpel" interface-name="ns3:RatingProvider" name="endpoint8" process-name="flujoBPEL" service-name="ns7:PartnerRatingProvider"/>
+        <endpoint display-name="PartnerRewardProvider" endpoint-name="RewardProviderRole_partnerRole" file-path="flujoBPEL.bpel" interface-name="ns5:RewardProvider" name="endpoint9" process-name="flujoBPEL" service-name="ns7:PartnerRewardProvider"/>
+        <endpoint display-name="PartnerTelcoProvider" endpoint-name="TelcoProviderRole_partnerRole" file-path="flujoBPEL.bpel" interface-name="ns2:TelcoProvider" name="endpoint10" process-name="flujoBPEL" service-name="ns7:PartnerTelcoProvider"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="FlujoBPEL.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="PruebaCA-FlujoBPEL" unit-name="FlujoBPEL" unknown="false" x="220" y="377">
+            <provides endpoint="endpoint6"/>
+            <consumes endpoint="endpoint7"/>
+            <consumes endpoint="endpoint8"/>
+            <consumes endpoint="endpoint9"/>
+            <consumes endpoint="endpoint10"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="PruebaCA-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port bindingType="soap" x="67" y="381">
+                    <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService2']/port[@name='TelcoProvider'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+                <port bindingType="soap" x="67" y="302">
+                    <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService3']/port[@name='RatingProvider'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port bindingType="soap" x="67" y="223">
+                    <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService4']/port[@name='BillingProvider'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port bindingType="soap" x="67" y="144">
+                    <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService5']/port[@name='RewardProvider'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint4"/>
+                    <provides endpoint="endpoint4"/>
+                </port>
+                <port bindingType="soap" x="67" y="546">
+                    <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService1']/port[@name='CallsSearch'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint7" mode="" provider="endpoint3" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint10" mode="" provider="endpoint1" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint8" mode="" provider="endpoint2" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint5" mode="" provider="endpoint6" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint9" mode="" provider="endpoint4" route-type="" routing-rule="" state="unchanged"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FlujoBPEL/BillingProviderService.wsdl#xpointer(/definitions/portType[@name='BillingProvider'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FlujoBPEL/CallsSearch.wsdl#xpointer(/definitions/portType[@name='CallsSearchPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FlujoBPEL/RatingProviderService.wsdl#xpointer(/definitions/portType[@name='RatingProvider'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FlujoBPEL/RewardProviderService.wsdl#xpointer(/definitions/portType[@name='RewardProvider'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FlujoBPEL/TelcoProviderService.wsdl#xpointer(/definitions/portType[@name='TelcoProvider'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding4'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding4'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService4'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService4'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/service[@name='PruebaCAService1'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

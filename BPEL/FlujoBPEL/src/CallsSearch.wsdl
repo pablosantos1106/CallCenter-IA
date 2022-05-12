@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="CallsSearch" targetNamespace="http://j2ee.netbeans.org/wsdl/FlujoBPEL/src/CallsSearch"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/FlujoBPEL/src/CallsSearch" xmlns:ns="http://rs.udc.es/billing" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns0="http://rs.udc.es/telco" xmlns:ns1="http://rs.udc.es/rating" xmlns:ns2="http://rs.udc.es/reward">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/FlujoBPEL/src/CallsSearch">
+            <xsd:import namespace="http://rs.udc.es/billing" schemaLocation="BillingProviderService_schema1.xsd"/>
+            <xsd:import namespace="http://rs.udc.es/telco" schemaLocation="TelcoProviderService_schema1.xsd"/>
+            <xsd:import namespace="http://rs.udc.es/rating" schemaLocation="RatingProviderService_schema1.xsd"/>
+            <xsd:import namespace="http://rs.udc.es/reward" schemaLocation="RewardProviderService_schema1.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="CallsSearchOperationRequest">
+        <part name="customerID" type="xsd:long"/>
+        <part name="month" type="xsd:byte"/>
+        <part name="year" type="xsd:integer"/>
+    </message>
+    <message name="SentBillRequest">
+        <part name="customerID" type="xsd:long"/>
+        <part name="month" type="xsd:byte"/>
+        <part name="year" type="xsd:integer"/>
+    </message>
+    <message name="CallsSearchOperationResponse">
+        <part name="billID" type="xsd:long"/>
+        <part name="amount" type="xsd:double"/>
+        <part name="payedBill" type="xsd:boolean"/>
+        <part name="callList" type="ns:createAndSendBill"/>
+    </message>
+    <message name="payedBillRequest">
+        <part name="customerID" type="xsd:long"/>
+        <part name="month" type="xsd:byte"/>
+        <part name="year" type="xsd:integer"/>
+        <part name="payedBill" type="xsd:boolean"/>
+    </message>
+    <message name="TelcoFault">
+        <part name="fault" element="ns0:TelcoException"/>
+    </message>
+    <message name="RewardFault">
+        <part name="fault" element="ns2:RewardException"/>
+    </message>
+    <portType name="CallsSearchPortType">
+        <operation name="CallsSearchOperation">
+            <input name="input1" message="tns:CallsSearchOperationRequest"/>
+            <output name="output1" message="tns:CallsSearchOperationResponse"/>
+        </operation>
+        <operation name="SentBill">
+            <input name="input2" message="tns:SentBillRequest"/>
+        </operation>
+        <operation name="payedBill">
+            <input name="input3" message="tns:payedBillRequest"/>
+        </operation>
+    </portType>
+    <plnk:partnerLinkType name="CallsSearch">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="CallsSearchPortTypeRole" portType="tns:CallsSearchPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

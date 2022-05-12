@@ -1,0 +1,60 @@
+Añadir Customer
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-addClient 'Cliente Primero' '12345678J' 'Elviña s/n' '981111111'"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-addClient 'Cliente Segundo' '87654321H' 'María Pita s/n' '981222222'"
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Actualizar Cliente
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Buscar Cliente ID
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Buscar Cliente DNI
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Buscar Cliente Keywords
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Añadir Llamadas
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-addPhoneCall 1 '2021-10-01T11:00:00.000000000' 100 '981100001' 'LOCAL'"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-addPhoneCall 1 '2021-10-02T12:00:00.000000000' 200 '981100002' 'NATIONAL'"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-addPhoneCall 1 '2021-10-03T13:00:00.000000000' 300 '981100003' 'INTERNATIONAL'"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-addPhoneCall 1 '2021-10-04T14:00:00.000000000' 400 '981100004' 'LOCAL'"
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Buscar llamadas para facturar
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Cambiar Estado
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-changeState 1 11 2021 'BILLED'"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-changeState 1 10 2021 'PAID'"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-changeState 1 10 2021 'BILLED'"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-changeState 1 10 2021 'PAID'"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-changeState 1 10 2021 'PAID'"
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Buscad Llamadas para facturas
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Buscar llamadas entre 2 fechas
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-findPhoneCalls 1 '2021-10-01T00:00:00' '2021-11-30T23:59:59' 0 8"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-findPhoneCalls 1 '2021-10-01T00:00:00' '2021-11-30T23:59:59' 'LOCAL' 0 8"
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Eliminar Cliente
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-removeClient 1"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-removeClient 2"
+
+mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-removeClient 100"

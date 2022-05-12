@@ -1,0 +1,17 @@
+{
+  "prettyPrint": true,
+  "cacheTTL": 0,
+  "openAPI": {
+    "info": {
+      "version": 1.0,
+      "title": "Customer and PhoneCalls",
+      "description": "Operations to manage customers and phonecalls",
+      "contact": {
+        "email": "luis.prada@udc.es"
+      }
+    },
+    "servers": [{
+      "url": "http://localhost:7070/rs-telco-service"
+    }]
+  }
+}

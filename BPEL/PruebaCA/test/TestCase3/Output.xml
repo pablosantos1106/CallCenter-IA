@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <m:CallsSearchOperationResponse xmlns:m="PruebaCA" xmlns:msgns="http://j2ee.netbeans.org/wsdl/FlujoBPEL/src/CallsSearch">
+      <part1 xmlns:msgns="http://rs.udc.es/billing" xmlns:ns0="http://j2ee.netbeans.org/wsdl/FlujoBPEL/src/CallsSearch">
+        <amount>50.0</amount>
+        <billId>1</billId>
+      </part1>
+    </m:CallsSearchOperationResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

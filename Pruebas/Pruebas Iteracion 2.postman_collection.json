@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "82fb4ce1-0394-4462-b2a8-ff072dc03bed",
+		"name": "Pruebas Iteracion 2 Copy",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UpdateCustomer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers?customerId=2&name=Cliente Segundo Modificado&dni=87654321H&address=María Pita nº1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "2"
+						},
+						{
+							"key": "name",
+							"value": "Cliente Segundo Modificado"
+						},
+						{
+							"key": "dni",
+							"value": "87654321H"
+						},
+						{
+							"key": "address",
+							"value": "María Pita nº1"
+						},
+						{
+							"key": "destinationNumber",
+							"value": "981222222",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Actualizar cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "FindById=15",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"15"
+					]
+				},
+				"description": "Buscar por ID"
+			},
+			"response": []
+		},
+		{
+			"name": "FindById=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByDNI=33333333A",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/findCustomerByDNI?dni=33333333A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"findCustomerByDNI"
+					],
+					"query": [
+						{
+							"key": "dni",
+							"value": "33333333A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByDNI=87654321H",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/findCustomerByDNI?dni=87654321H",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"findCustomerByDNI"
+					],
+					"query": [
+						{
+							"key": "dni",
+							"value": "87654321H"
+						}
+					]
+				},
+				"description": "Buscar por DNI"
+			},
+			"response": []
+		},
+		{
+			"name": "FindByName=cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/findCustomerByName?keywords=cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"findCustomerByName"
+					],
+					"query": [
+						{
+							"key": "keywords",
+							"value": "cliente"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByName=SEGUNDO",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/findCustomerByName?keywords=SEGUNDO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"findCustomerByName"
+					],
+					"query": [
+						{
+							"key": "keywords",
+							"value": "SEGUNDO"
+						}
+					]
+				},
+				"description": "Buscar por nombre"
+			},
+			"response": []
+		},
+		{
+			"name": "FindByMonth1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/phonecalls/findCallsByMonth?customerId=1&month=1&year=2022",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"phonecalls",
+						"findCallsByMonth"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						},
+						{
+							"key": "month",
+							"value": "1"
+						},
+						{
+							"key": "year",
+							"value": "2022"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByMonth2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/phonecalls/findCallsByMonth?customerId=1&month=10&year=2021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"phonecalls",
+						"findCallsByMonth"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						},
+						{
+							"key": "month",
+							"value": "10"
+						},
+						{
+							"key": "year",
+							"value": "2021"
+						}
+					]
+				},
+				"description": "Buscar llamadas para facturar 1"
+			},
+			"response": []
+		},
+		{
+			"name": "FindByMonth3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/phonecalls/findCallsByMonth?customerId=1&month=10&year=2021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"phonecalls",
+						"findCallsByMonth"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						},
+						{
+							"key": "month",
+							"value": "10"
+						},
+						{
+							"key": "year",
+							"value": "2021"
+						}
+					]
+				},
+				"description": "Buscar llamadas para facturar 2"
+			},
+			"response": []
+		}
+	]
+}
