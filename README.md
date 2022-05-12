@@ -26,3 +26,10 @@
 
     mvn exec:java -Dexec.mainClass="es.udc.rs.telco.client.ui.TelcoServiceClient" -Dexec.args="-findCustomer 1"
 
+## Authors
+    
+    Pablo Santos Cabaleiro - p.santos.cabaleiro@udc.es
+    Luis Prada Conde - luis.prada@udc.es
+    Borja Alonso Sobral - borja.alonso.sobral@udc.es
+   
+
